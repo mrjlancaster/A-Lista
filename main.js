@@ -9,8 +9,7 @@ button.addEventListener('click', () => {
 
     //clear input
     input.value = '';
-
-    console.log(guests);
+    console.log(localStorage);
 })
 
 // handle guest function
@@ -25,5 +24,4 @@ const handleGuest = () => {
     const li = document.createElement('li');
     li.innerText = newGuest;
     ul.appendChild(li);
-
 }

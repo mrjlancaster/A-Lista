@@ -141,7 +141,7 @@ form button {
   border-radius: 4px;
 }
 
-li {
+.list_container li {
   list-style: none;
   padding: 10px;
   border-bottom: 1px solid lightgray;
