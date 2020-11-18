@@ -7,8 +7,9 @@ require('dotenv').config();
 // render public folder
 app.use(express.static('public'));
 
+
 // connect database
-mongoose.connect(process.env.DB_CONNECTION, () => {
+mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log('Connected to DB successfully!');
 
     // run localhost
