@@ -75,7 +75,20 @@ form button {
   margin-top: 20px;
 }
 
-.output {
+.guests {
+  margin-top: 20px;
+  width: 400px;
+}
+
+.guests p {
+  color: gray;
+  margin-left: 5px;
+  padding: 10px 0;
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,14 +96,54 @@ form button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 50%;
   margin: 0 auto;
 }
 
+.search_guest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  margin-top: 20px;
+  padding: 10px 5px;
+  border-radius: 4px;
+  border: 1px solid lightgray;
+}
+
+.search_guest input {
+  width: 94%;
+  border: none;
+  outline: none;
+  padding-left: 5px;
+}
+
+.search_guest i {
+  color: lightgray;
+  cursor: pointer;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.search_guest i:hover {
+  color: #000;
+}
+
+.list_container {
+  border: 1px solid lightgray;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  min-height: 600px;
+  width: 400px;
+  border-radius: 4px;
+}
+
 li {
   list-style: none;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
 }
 /*# sourceMappingURL=main.css.map */

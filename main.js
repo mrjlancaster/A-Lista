@@ -5,18 +5,25 @@ const guests = [];
 
 // get guests name and add to list
 button.addEventListener('click', () => {
-    const newGuest = input.value;
-    const li = document.createElement('li');
-
-    li.innerText = newGuest;
-    // add to list
-    guests.push(newGuest);
-
-    // display list
-    ul.appendChild(li);
+    handleGuest();
 
     //clear input
     input.value = '';
 
     console.log(guests);
 })
+
+// handle guest function
+const handleGuest = () => {
+    // save new guests name in variable
+    const newGuest = input.value;
+
+    // add guest to array
+    guests.push(newGuest);
+
+    // create new li and append name to list
+    const li = document.createElement('li');
+    li.innerText = newGuest;
+    ul.appendChild(li);
+
+}
