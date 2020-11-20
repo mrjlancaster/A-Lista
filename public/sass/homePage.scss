@@ -53,3 +53,8 @@ form {
         }
     }
 }
+
+.hideHome {
+    transition: all .5s ease;
+    transform: translateX(-110%);
+}

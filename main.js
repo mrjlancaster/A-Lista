@@ -1,21 +1,41 @@
-const input = document.querySelector('input');
-const button = document.querySelector('form button');
+const guestNameInput = document.querySelector('input');
+const home = document.querySelector('.home');
+const eventNameInput = document.querySelector('.event_name');
+const createEventBtn = document.querySelector('.create_event-btn');
+const addGuestBtn = document.querySelector('.add_guest-btn');
 const ul = document.querySelector('ul');
 const guests = [];
 
-// get guests name and add to list
-button.addEventListener('click', () => {
-    handleGuest();
+//handle event name input
+const createEvent = () => {
+    createEventBtn.addEventListener('click', (e) => {
+        e.preventDefault();
 
-    //clear input
-    input.value = '';
-    console.log(localStorage);
-})
+        // get event name
+        const eventName = eventNameInput.value;
+        console.log(eventName);
+
+        setTimeout(() => {
+            home.classList.add('hideHome');
+            eventNameInput.value = '';
+        }, 600);  
+    })
+}
+
+
+// get guests name and add to list
+// addGuestBtn.addEventListener('click', () => {
+//     handleGuest();
+
+//     //clear input
+//     guestNameInput.value = '';
+//     console.log(localStorage);
+// })
 
 // handle guest function
 const handleGuest = () => {
     // save new guests name in variable
-    const newGuest = input.value;
+    const newGuest = guestNameInput.value;
 
     // add guest to array
     guests.push(newGuest);
@@ -25,3 +45,5 @@ const handleGuest = () => {
     li.innerText = newGuest;
     ul.appendChild(li);
 }
+
+createEvent();

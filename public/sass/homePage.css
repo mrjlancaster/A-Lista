@@ -73,4 +73,11 @@ form button:hover {
   background-color: #fff;
   color: #000;
 }
+
+.hideHome {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-transform: translateX(-110%);
+          transform: translateX(-110%);
+}
 /*# sourceMappingURL=homePage.css.map */
