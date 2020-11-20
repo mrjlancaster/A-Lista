@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 const Guest = require('./models/Guest');
+const db = mongoose.connection;
 require('dotenv').config();
 
 // set view engine
@@ -13,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 // render public folder
-// app.use(express.static('public'));
+app.use(express.static('public'));
 
 //routes
 app.post('/guest-list', (req, res) => {
@@ -30,15 +31,20 @@ app.post('/guest-list', (req, res) => {
     res.send('new guest added');
 })
 
+app.post('/event', (req, res) => {
+    db.createCollection(req.body.eventName);
+    res.redirect('my-list')
+})
 
-// render home page
+
+// render home view
 app.get('/', (req, res) => {
     res.render('home');
 })
 
-// render guest list page
-app.get('/list', (req, res) => {
-    res.render('guestList', {party: 'My party'});
+// render guest list view
+app.get('/my-list', (req, res) => {
+    res.render('guestList', {party: 'my party'});
 })
 
 

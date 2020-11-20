@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sass/homePage.css" />
     <title>A Lista | Guest Planner</title>
 </head>
 <body>
-    <header>
-        <div>A-Lista</div>
-        <nav>
-            <ul>
-                <li>Register</li>
-                <li>Login</li>
-            </ul>
-        </nav>
-    </header>
-
-    <div>
-        A Lista
+    <div class="home">
+        <h1>A Lista</h1>
+        <form action="event" method="POST">
+            <label for="organization">Enter party / event / organization name:</label>
+            <input class="event_name" name="eventName" type="text" placeholder="Enter name">
+            <button class="create_event-btn" type="submit">Create List</button>
+        </form>
     </div>
     
+    <script src="../main.js"></script>
 </body>
 </html>
