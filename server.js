@@ -15,15 +15,13 @@ app.use(express.static('public'));
 //routes
 app.post('/guest-list', (req, res) => {
     const guest = new Guest({
-        name: req.body.name
+        name: req.body.name,
     })
 
-    guest.save()
-    .then(result => {
-        console.log(result);
-    })
-    .catch(error => {
-        console.log(error);
+    guest.save(function(error) {
+        if (error) {
+            console.log(error);
+        }
     })
    
     res.send('new guest added');
@@ -39,3 +37,8 @@ mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTo
         console.log(`Listening on port ${process.env.PORT}`);
     })
 })
+
+// Guest.find(function (err, guests) {
+//     if (err) return console.error(err);
+//     console.log(guests);
+//   })
