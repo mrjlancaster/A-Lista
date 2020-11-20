@@ -2,12 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const guestSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    }
-})
+    name: String
+});
 
-const Guest = mongoose.model('guests', guestSchema);
+const Guest = mongoose.model('Guest', guestSchema);
 
 module.exports = Guest;

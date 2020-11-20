@@ -2,23 +2,30 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
-
-// middlewares
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json())
-
-
 const Guest = require('./models/Guest');
 require('dotenv').config();
+
+// middlewares
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 
 // render public folder
 app.use(express.static('public'));
 
 //routes
 app.post('/guest-list', (req, res) => {
-   
-    console.log(req.body);
+    const guest = new Guest({
+        name: req.body.name
+    })
 
+    guest.save()
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => {
+        console.log(error);
+    })
+   
     res.send('new guest added');
 })
 
@@ -32,4 +39,3 @@ mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTo
         console.log(`Listening on port ${process.env.PORT}`);
     })
 })
-
