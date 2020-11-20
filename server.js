@@ -5,12 +5,15 @@ const app = express();
 const Guest = require('./models/Guest');
 require('dotenv').config();
 
+// set view engine
+app.set('view engine', 'ejs');
+
 // middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 
 // render public folder
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 //routes
 app.post('/guest-list', (req, res) => {
@@ -27,6 +30,9 @@ app.post('/guest-list', (req, res) => {
     res.send('new guest added');
 })
 
+app.get('/', (req, res) => {
+    res.render('home');
+})
 
 // connect database
 mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTopology: true }, () => {
