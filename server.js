@@ -30,9 +30,17 @@ app.post('/guest-list', (req, res) => {
     res.send('new guest added');
 })
 
+
+// render home page
 app.get('/', (req, res) => {
     res.render('home');
 })
+
+// render guest list page
+app.get('/list', (req, res) => {
+    res.render('guestList', {party: 'My party'});
+})
+
 
 // connect database
 mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTopology: true }, () => {
@@ -48,3 +56,10 @@ mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTo
 //     if (err) return console.error(err);
 //     console.log(guests);
 //   })
+
+
+// Guest.insertMany([
+//     {name: "Mary Jane"},
+//     {name: "Mel Gibson"},
+//     {name: "Jennie Morrison"}
+// ])

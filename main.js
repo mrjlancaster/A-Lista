@@ -4,13 +4,13 @@ const eventNameInput = document.querySelector('.event_name');
 const createEventBtn = document.querySelector('.create_event-btn');
 const addGuestBtn = document.querySelector('.add_guest-btn');
 const ul = document.querySelector('ul');
-const guests = [];
+const guestList = [];
 
 //handle event name input
 const createEvent = () => {
     createEventBtn.addEventListener('click', (e) => {
         e.preventDefault();
-
+        
         // get event name
         const eventName = eventNameInput.value;
         console.log(eventName);
@@ -34,16 +34,14 @@ const createEvent = () => {
 
 // handle guest function
 const handleGuest = () => {
-    // save new guests name in variable
+    // get guest name
     const newGuest = guestNameInput.value;
-
-    // add guest to array
-    guests.push(newGuest);
-
+    
     // create new li and append name to list
     const li = document.createElement('li');
     li.innerText = newGuest;
     ul.appendChild(li);
 }
+
 
 createEvent();
