@@ -1,11 +1,26 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 const app = express();
 
+// middlewares
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json())
+
+
+const Guest = require('./models/Guest');
 require('dotenv').config();
 
 // render public folder
 app.use(express.static('public'));
+
+//routes
+app.post('/guest-list', (req, res) => {
+   
+    console.log(req.body);
+
+    res.send('new guest added');
+})
 
 
 // connect database
