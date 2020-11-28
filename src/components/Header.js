@@ -3,7 +3,7 @@ import '../components/Header.css';
 const Header = () => {
     return (
         <div className='header'>
-            <h1>A-LISTA</h1>
+            <h2>A-LISTA</h2>
             <navbar>
                 <ul>
                     <li className='signIn'>Sign In</li>
