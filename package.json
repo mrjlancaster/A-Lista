@@ -1,15 +1,29 @@
 {
   "name": "a-lista",
   "version": "0.1.0",
+  "description": "Guests manager application",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.17",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrjlancaster/A-Lista.git"
+  },
+  "author": "Jonathan Lancaster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrjlancaster/A-Lista/issues"
   },
   "scripts": {
     "start": "react-scripts start",
