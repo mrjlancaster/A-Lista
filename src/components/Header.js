@@ -1,5 +1,4 @@
 import '../components/Header.css';
-import { Link } from 'react-router';
 
 const Header = () => {
     return (
@@ -7,8 +6,8 @@ const Header = () => {
             <h2>A-LISTA</h2>
             <navbar>
                 <ul>
-                    <Link className='signIn' to="/signIn">Sign In</Link>
-                    <Link className='register' to="/register">Create your account</Link>
+                    <li className='signIn'>Sign In</li>
+                    <li className='register'>Create your account</li>
                 </ul>
             </navbar>
         </div>
