@@ -9,10 +9,10 @@ const Header = () => {
                 <navbar>
                     <ul>
                         <li className='signIn'>
-                            <Link to='/signin'>Sign In</Link>
+                            <Link to='/signin' className="li-font">Sign In</Link>
                         </li>
                         <li className='register'>
-                            <Link to='/register'>Create your account</Link>
+                            <Link to='/register' className="li-font">Create your account</Link>
                         </li>
                     </ul>
                 </navbar>
