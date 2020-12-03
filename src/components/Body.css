@@ -11,9 +11,12 @@
     width: 50%;
     color: #fff;
     justify-self: center;
+    margin-left: 40px;
 }
 
 .body_description-wrapper h1 {
+    position: relative;
+    bottom: 40px;
     font-size: 70px;
     font-weight: 400;
 }
@@ -36,27 +39,30 @@
     width: 40%;
     justify-content: space-between;
     position: relative;
-    top: 50px;
+    top: 40px;
 }
 
 .register_input {
     outline: none;
-    padding: 12px;
+    padding: 10px;
     background: none;
     border: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     width: 300px;
 }
 
 .register_input::placeholder {
     color: #fff;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .register_link {
+    font-weight: 400;
     color: #fff;
     text-decoration: none;
     border-left: 1px solid #fff;
-    padding: 12px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
 }
