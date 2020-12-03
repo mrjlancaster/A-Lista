@@ -10,9 +10,9 @@ const Body = () => {
             </div>
             <div className="register_input-wrapper">
                 <div>
-                    <input type="text" className="register_input" name="email" placeholder="youremail@email.com" />
+                    <input type="text" className="register_input" name="email" placeholder="youremail@example.com" />
                 </div>
-                <Link to='/register' className="register_link">Create account<i class="fas fa-long-arrow-alt-right"></i></Link>
+                <Link to='/register' className="register_link">Create account <i class="fas fa-long-arrow-alt-right"></i></Link>
             </div>
       
         </div>

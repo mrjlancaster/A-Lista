@@ -1,16 +1,16 @@
 .body_container {
+    position: relative;
     height: 90vh;
-    background-color: #6c5ce7;
+    background-color: #0984e3;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-
+    flex-direction: column;
 }
 
 .body_description-wrapper {
     width: 50%;
     color: #fff;
+    justify-self: center;
 }
 
 .body_description-wrapper h1 {
@@ -29,12 +29,14 @@
 }
 
 .register_input-wrapper {
+    align-self: center;
     display: flex;
-    border: 2px solid #fff;
+    border: 3px solid #fff;
     border-radius: 4px;
     width: 40%;
     justify-content: space-between;
-    /* padding: 12px 20px; */
+    position: relative;
+    top: 50px;
 }
 
 .register_input {
@@ -44,11 +46,12 @@
     border: none;
     color: #fff;
     font-size: 16px;
+    width: 300px;
 }
 
 .register_input::placeholder {
     color: #fff;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .register_link {
