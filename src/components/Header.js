@@ -8,7 +8,6 @@ const Header = () => {
 			<navbar>
 				<div className="navigation_links">
 				<Link to='/signin' className="li-font signIn">Sign In</Link>
-
 				<Link to='/register' className="li-font register">Create your account</Link>
 				</div>
 			</navbar>
