@@ -8,17 +8,28 @@ const Register = () => {
 			<div className="register_links">
 				<h1>A-Lista</h1>
 				<h3>New User Registration</h3>
-				<Link to='/login'>Login</Link>
-				<Link to='/register'>Register</Link>
+				<ul>
+					<li>
+						<Link to='/login'>Login</Link>
+					</li>
+					<li>
+						<Link to='/register'>Register</Link>
+					</li>
+				</ul>
 			</div>
+
 			<div className="register_form-container">
 				<form action="/" className="register_form" method="POST">
 					<h1>Register</h1>
-					<input type="text" placeholder="First name" />
-					<input type="text" placeholder="Last name" />
-					<input type="email" placeholder="Email" />
-					<input type="password" placeholder="Password" />
-					<button type="submit">Register</button>
+					<div className="register_inputs-container">
+						<input type="text" placeholder="Full name" />
+						<input type="email" placeholder="Email" />
+						<input type="password" placeholder="Password" />
+					</div>
+					<button type="submit">Create account</button>
+					<p>Already have an account?
+						<Link to="/login">Login</Link>
+					</p>
 				</form>
 			</div>
 		</div>
