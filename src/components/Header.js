@@ -7,7 +7,7 @@ const Header = () => {
 			<h2>A-LISTA</h2>
 			<navbar>
 				<div className="navigation_links">
-					<Link to='/signin' className="li-font signIn">Sign In</Link>
+					<Link to='/login' className="li-font signIn">Login</Link>
 					<Link to='/register' className="li-font register">Create your account</Link>
 				</div>
 			</navbar>

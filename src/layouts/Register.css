@@ -1,0 +1,19 @@
+.register_container {
+	display: flex;
+	height: 100vh;
+}
+
+.register_links {
+	width: 30%;
+	background-color: #0984e3;
+	color: #fff;
+}
+
+.register_form-container {
+	width: 70%;
+}
+
+.register_form {
+	display: flex;
+	flex-direction: column;
+}
