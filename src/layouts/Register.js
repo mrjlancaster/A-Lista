@@ -7,7 +7,6 @@ const Register = () => {
 		<div className="register_container">
 			<div className="register_links">
 				<h1>A-Lista</h1>
-
 				<div className="newUserRegistration">
 					<h3>
 						New User <br />
@@ -21,9 +20,7 @@ const Register = () => {
 							<Link to='/register'>Register</Link>
 						</li>
 					</ul>
-
 				</div>
-		
 			</div>
 
 			<div className="register_form-container">
