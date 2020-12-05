@@ -4,11 +4,56 @@
 }
 
 .register_links {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
 	width: 30%;
+	align-items: center;
+	height: 100%;
 	background-color: #0984e3;
 	color: #fff;
 }
 
+.register_links h1 {
+	font-size: 55px;
+	font-weight: 400;
+}
+
+.newUserRegistration {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	top: 50%;
+}
+
+.register_links h3 {
+	font-size: 30px;
+	text-align: center;
+	font-weight: 400;
+	line-height: 1em;
+}
+
+.register_links ul {
+	padding: 20px;
+	display: flex;
+	
+}
+
+.register_links li {
+	list-style: none;
+}
+
+.register_links a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.register_links li:nth-child(2) {
+	margin-left: 10px;
+	text-decoration: underline;
+}
 
 /* form container */
 .register_form-container {
@@ -36,7 +81,8 @@
 	flex-direction: column;
 }
 
-.register_form input {
+.register_form input,
+.register_form button {
 	width: 300px;
 	padding: 8px 10px;
 	margin: 10px 0;
@@ -48,15 +94,16 @@
 .register_form button {
 	width: 300px;
 	margin-left: 20px;
-	background-color: #4834d4;
+	background-color: #0984e3;
 	border: none;
 	color: #fff;
 	border-radius: 4px;
 	cursor: pointer;
+	transition: all .3s ease;
 }
 
 .register_form button:hover {
-	background-color: #341dc4ce;
+	background-color: #005ba1;
 }
 
 .register_form p {
