@@ -11,6 +11,10 @@
 }
 
 .login_sidebar {
+	background-image: url('../img/loginbackground.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -18,7 +22,6 @@
 	width: 30%;
 	align-items: center;
 	height: 100%;
-	background-color: #2d3436;
 	color: #fff;
 	order: 2;
 }

@@ -12,9 +12,7 @@ const Login = () => {
 			<div className="login_sidebar">
 				<h1>A-Lista</h1>
 				<div className="login_sidebar-content">
-					<h3>
-						Member login
-					</h3>
+					<h3>Member login</h3>
 					<ul>
 						<li>
 							<Link to='/login'>Login</Link>
