@@ -5,12 +5,15 @@ import { Link } from 'react-router-dom';
 const Login = () => {
 	return (
 		<div className="login_container">
+			<div className="login_back-btn">
+				<Link to="/"><i class="fas fa-long-arrow-alt-left"></i> back</Link>
+			</div>
+	
 			<div className="login_sidebar">
 				<h1>A-Lista</h1>
 				<div className="login_sidebar-content">
 					<h3>
-						Member <br />
-						Login
+						Member login
 					</h3>
 					<ul>
 						<li>
@@ -23,17 +26,22 @@ const Login = () => {
 				</div>
 			</div>
 
-			<div className="register_form-container">
-				<form action="/" className="register_form" method="POST">
+			<div className="login_form-container">
+				<form action="/login" className="login_form" method="POST">
 					<h1>Welcome</h1>
-					<div className="register_inputs-container">
+					<div className="login_inputs-container">
 						<input type="email" placeholder="Email*" />
 						<input type="password" placeholder="Password*" />
 					</div>
-					<p>
+
+					<p className="login_form-forgot-password">
 						<Link to="">Forgot password?</Link>
 					</p>
-					<button type="submit">LOGIN</button>
+
+					<button className="login_button" type="submit">LOGIN</button>
+					<p>
+						Don't have an account? <Link to="/register"> Register here</Link>
+					</p>
 				</form>
 			</div>
 		</div>
