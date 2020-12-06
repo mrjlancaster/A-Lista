@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
 	return (
-		<div className="register_container">
-			<div className="register_links">
+		<div className="login_container">
+			<div className="login_sidebar">
 				<h1>A-Lista</h1>
-				<div className="newUserRegistration">
+				<div className="login_sidebar-content">
 					<h3>
 						Member <br />
 						Login
