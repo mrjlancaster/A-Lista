@@ -1,9 +1,41 @@
 import React from 'react';
+import './Login.css';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 	return (
-		<div>
-			This is the Login page
+		<div className="register_container">
+			<div className="register_links">
+				<h1>A-Lista</h1>
+				<div className="newUserRegistration">
+					<h3>
+						Member <br />
+						Login
+					</h3>
+					<ul>
+						<li>
+							<Link to='/login'>Login</Link>
+						</li>
+						<li>
+							<Link to='/register'>Register</Link>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div className="register_form-container">
+				<form action="/" className="register_form" method="POST">
+					<h1>Welcome</h1>
+					<div className="register_inputs-container">
+						<input type="email" placeholder="Email*" />
+						<input type="password" placeholder="Password*" />
+					</div>
+					<p>
+						<Link to="">Forgot password?</Link>
+					</p>
+					<button type="submit">LOGIN</button>
+				</form>
+			</div>
 		</div>
 	)
 }
