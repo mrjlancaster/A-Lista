@@ -30,16 +30,18 @@ const Login = () => {
 					<div className="login_inputs-container">
 						<input type="email" placeholder="Email*" />
 						<input type="password" placeholder="Password*" />
+						<p>
+							<Link to="">Forgot password?</Link>
+						</p>
 					</div>
 
-					<p className="login_form-forgot-password">
-						<Link to="">Forgot password?</Link>
-					</p>
-
-					<button className="login_button" type="submit">LOGIN</button>
-					<p>
-						Don't have an account? <Link to="/register"> Register here</Link>
-					</p>
+					<div className="login_button-container">
+						<button type="submit">LOGIN</button>
+						<p>
+							Don't have an account? <Link to="/register"> Register here</Link>
+						</p>
+					</div>
+					
 				</form>
 			</div>
 		</div>
