@@ -8,7 +8,7 @@ const Register = () => {
 			<div className="register_back-btn">
 				<Link to="/"><i class="fas fa-long-arrow-alt-left"></i> back</Link>
 			</div>
-			<div className="register_links">
+			<div className="register_sidebar">
 				<h1>A-Lista</h1>
 				<div className="newUserRegistration">
 					<h3>

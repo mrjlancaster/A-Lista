@@ -11,7 +11,8 @@
 	height: 100vh;
 }
 
-.register_links {
+.register_sidebar {
+	background: url('../img/registerbackground.jpg') no-repeat center / cover;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -23,7 +24,8 @@
 	color: #fff;
 }
 
-.register_links h1 {
+.register_sidebar h1 {
+	text-shadow: 2px 2px 4px #000;
 	font-size: 55px;
 	font-weight: 400;
 }
@@ -36,13 +38,14 @@
 	top: 50%;
 }
 
-.register_links h3 {
+.register_sidebar h3 {
 	font-size: 30px;
-	text-align: start;
+	text-align: center;
 	line-height: 1.4em;
+	text-shadow: 2px 2px 4px #000;
 }
 
-.register_links ul {
+.register_sidebar ul {
 	padding: 20px 0;
 	display: flex;
 	text-align: start;
@@ -51,19 +54,19 @@
 	
 }
 
-.register_links li {
+.register_sidebar li {
 	list-style: none;
 	padding: 5px 0;
+	text-shadow: 2px 2px 4px #000;
 }
 
-.register_links a {
+.register_sidebar a {
 	text-decoration: none;
 	color: #fff;
 	font-size: 20px;
-
 }
 
-.register_links li:nth-child(2) {
+.register_sidebar li:nth-child(2) {
 	margin-left: 10px;
 	border-bottom: 2px solid #fff;
 }
