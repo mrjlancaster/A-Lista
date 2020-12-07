@@ -6,7 +6,7 @@ const Login = () => {
 	return (
 		<div className="login_container">
 			<div className="login_back-btn">
-				<Link to="/"><i class="fas fa-long-arrow-alt-left"></i> back</Link>
+				<Link to="/"><i className="fas fa-long-arrow-alt-left"></i> back</Link>
 			</div>
 	
 			<div className="login_sidebar">

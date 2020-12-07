@@ -6,17 +6,23 @@ import Homepage from './layouts/Homepage';
 import Login from './layouts/Login';
 import Register from './layouts/Register';
 
-const App =(props) => {
+const App =() => {
 	const [ email, setEmail ] = useState('');
+	const handleEmail = (e) => setEmail(e.target.value);
+
+
 	return (
 		<Router>
 			<div className="App">
 				<Switch>
 					<Route path='/' exact>
-						<Homepage email={ email } />
+						<Homepage email={email} onChange={handleEmail} />
 					</Route>
 					<Route path='/Login' component={Login} />
-					<Route path='/register' component={Register} />
+
+					<Route path='/register'>
+						<Register email={email} />
+					</Route>
 				</Switch>
 			</div>
 		</Router>

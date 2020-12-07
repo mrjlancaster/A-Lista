@@ -2,11 +2,11 @@ import React from 'react';
 import './Register.css';
 import { Link } from 'react-router-dom';
 
-const Register = () => {
+const Register = ({ email }) => {
 	return (
 		<div className="register_container">
 			<div className="register_back-btn">
-				<Link to="/"><i class="fas fa-long-arrow-alt-left"></i> back</Link>
+				<Link to="/"><i className="fas fa-long-arrow-alt-left"></i> back</Link>
 			</div>
 			<div className="register_sidebar">
 				<h1>A-Lista</h1>
@@ -31,7 +31,7 @@ const Register = () => {
 					<h1>Register</h1>
 					<div className="register_inputs-container">
 						<input type="text" placeholder="Full name*" />
-						<input type="email" placeholder="Email*" />
+						<input type="email" placeholder="Email*" value={email.value}/>
 						<input type="password" placeholder="Password*" />
 						<input type="password" placeholder="Confirm password*" />
 					</div>
