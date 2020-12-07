@@ -1,7 +1,17 @@
+import { useState } from 'react';
 import './Body.css';
 import { Link } from 'react-router-dom';
 
 const Body = () => {
+
+	const [ email, setEmail ] = useState('');
+
+	const handleEmail = () => {
+		setEmail('');
+		console.log(email);
+	}
+
+
 	return (
 		<div className="body_container">
 			<div className="body_description-wrapper">
@@ -10,9 +20,9 @@ const Body = () => {
 			</div>
 			<div className="register_input-wrapper">
 					<div>
-						<input type="text" className="register_input" name="email" placeholder="youremail@example.com" />
+						<input type="text" className="register_input" name="email" placeholder="emailadress@example.com" onChange={(e) => setEmail(e.target.value)} value={email} />
 					</div>
-						<Link to='/register' className="register_link">Create account <i class="fas fa-long-arrow-alt-right"></i></Link>
+						<Link onClick={handleEmail} to='/register' className="register_link">Create account <i class="fas fa-long-arrow-alt-right"></i></Link>
 			</div>
 		</div>
 	)
