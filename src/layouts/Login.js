@@ -36,7 +36,7 @@ const Login = () => {
 					</div>
 
 					<div className="login_button-container">
-						<button type="submit">LOGIN</button>
+						<button type="submit">Login</button>
 						<p>
 							Don't have an account? <Link to="/register"> Register here</Link>
 						</p>

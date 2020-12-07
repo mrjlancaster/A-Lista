@@ -12,7 +12,7 @@ const Register = () => {
 				<h1>A-Lista</h1>
 				<div className="newUserRegistration">
 					<h3>
-						New User <br />
+						New Member <br />
 						Registration
 					</h3>
 					<ul>
@@ -33,6 +33,7 @@ const Register = () => {
 						<input type="text" placeholder="Full name*" />
 						<input type="email" placeholder="Email*" />
 						<input type="password" placeholder="Password*" />
+						<input type="password" placeholder="Confirm password*" />
 					</div>
 					<div className="register_button-container">
 						<button type="submit">Create account</button>

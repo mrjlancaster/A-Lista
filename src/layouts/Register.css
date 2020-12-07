@@ -17,6 +17,7 @@
 }
 
 .register_sidebar {
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
 	background: url('../img/registerbackground.jpg') no-repeat center / cover;
 	position: relative;
 	display: flex;
@@ -25,7 +26,6 @@
 	width: 30%;
 	align-items: center;
 	height: 100%;
-	background-color: #0984e3;
 	color: #fff;
 }
 
@@ -84,14 +84,19 @@
 }
 
 .register_form {
+	border-radius: 4px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	height: 75%;
+	width: 50%;
 	display: flex;
 	flex-direction: column;
-	height: 50vh;
+	align-items: center;
+	justify-content: space-evenly;
 }
 
 .register_form h1 {
-	margin-left: 20px;
 	font-weight: 400;
+	font-size: 60px;
 }
 
 .register_inputs-container {
@@ -99,19 +104,13 @@
 	flex-direction: column;
 }
 
-.register_form input,
-.register_form button {
+.register_form input {
 	width: 300px;
 	padding: 8px 10px;
 	margin: 10px 0;
 	margin-left: 20px;
 	border: 1px solid lightgray;
 	border-radius: 4px;
-}
-
-.register_form p {
-	font-size: 12px;
-	margin-left: 20px;
 }
 
 /* register button container */
@@ -122,7 +121,7 @@
 
 .register_button-container button {
 	padding: 10px;
-	background-color: #2d3436;
+	background-color: #000;
 	border: none;
 	color: #fff;
 	border-radius: 4px;
@@ -131,4 +130,6 @@
 
 .register_button-container p {
 	font-size: 12px;
+	text-align: center;
+	margin-top: 5px;
 }
