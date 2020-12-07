@@ -26,6 +26,7 @@
 .login_sidebar h1 {
 	font-size: 55px;
 	font-weight: 400;
+	text-shadow: 2px 2px 4px #000;
 }
 
 .login_sidebar-content {
@@ -38,6 +39,8 @@
 
 .login_sidebar h3 {
 	font-size: 30px;
+	text-shadow: 2px 2px 4px #000;
+
 }
 
 .login_sidebar ul {
