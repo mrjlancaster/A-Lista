@@ -109,22 +109,26 @@
 	border-radius: 4px;
 }
 
-.register_form button {
-	width: 300px;
+.register_form p {
+	font-size: 12px;
 	margin-left: 20px;
-	background-color: #0984e3;
+}
+
+/* register button container */
+.register_button-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.register_button-container button {
+	padding: 10px;
+	background-color: #2d3436;
 	border: none;
 	color: #fff;
 	border-radius: 4px;
 	cursor: pointer;
-	transition: all .3s ease;
 }
 
-.register_form button:hover {
-	background-color: #005ba1;
-}
-
-.register_form p {
+.register_button-container p {
 	font-size: 12px;
-	margin-left: 20px;
 }

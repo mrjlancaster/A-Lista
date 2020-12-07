@@ -34,10 +34,13 @@ const Register = () => {
 						<input type="email" placeholder="Email*" />
 						<input type="password" placeholder="Password*" />
 					</div>
-					<button type="submit">Create account</button>
-					<p>Already have an account?
-						<Link to="/login">Login</Link>
-					</p>
+					<div className="register_button-container">
+						<button type="submit">Create account</button>
+						<p>Already have an account?
+							<Link to="/login"> Login</Link>
+						</p>
+					</div>
+					
 				</form>
 			</div>
 		</div>
