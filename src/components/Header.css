@@ -8,7 +8,10 @@
 	align-items: center;
 }
 
-.header h2 {
+.header h2 a {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
 	margin-left: 30px;
 }
 
@@ -19,7 +22,6 @@
 	border-radius: 4px;
 	margin-right: 30px;
 }
-
 
 .li-font {
 	cursor: pointer;
