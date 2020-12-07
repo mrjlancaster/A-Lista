@@ -5,6 +5,10 @@
 	font-size: 12px;
 }
 
+.login_back-btn a {
+	color: #000;
+}
+
 .login_container {
 	display: flex;
 	height: 100vh;

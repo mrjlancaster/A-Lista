@@ -6,6 +6,11 @@
 	z-index: 100;
 }
 
+.register_back-btn a {
+	color: #fff;
+	text-shadow: 2px 2px 4px #000;
+}
+
 .register_container {
 	display: flex;
 	height: 100vh;
