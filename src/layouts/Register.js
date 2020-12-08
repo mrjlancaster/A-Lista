@@ -3,7 +3,17 @@ import './Register.css';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
-	const [email, setEmail ] = useState('');
+	const [ registration, setRegistration ] = useState({
+		name: '',
+		email: '',
+		password: '',
+		confirmPassword: '',
+	});
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+	}
+
 
 	return (
 		<div className="register_container">
@@ -29,13 +39,43 @@ const Register = () => {
 			</div>
 
 			<div className="register_form-container">
-				<form action="/register" className="register_form" method="POST">
+				<form onSubmit={handleSubmit} className="register_form">
 					<h1>Register</h1>
 					<div className="register_inputs-container">
-						<input type="text" placeholder="Full name*" />
-						<input type="email" placeholder="Email*" value={email} onChange={(e) => setEmail(e.target.value)} />
-						<input type="password" placeholder="Password*" />
-						<input type="password" placeholder="Confirm password*" />
+						<input 
+							type="text" 
+							placeholder="Full name*" 
+							name="full_name" 
+							value={registration.name} 
+							onChange={(e) => setRegistration(e.target.value)} 
+							required 
+						/>
+
+						<input 
+							type="email" 
+							placeholder="Email*" 
+							name="email" value={registration.email} 
+							onChange={(e) => setRegistration(e.target.value)} 
+							required 
+						/>
+
+						<input 
+							type="password" 
+							placeholder="Password*" 
+							name="password" 
+							value={registration.password} 
+							onChange={(e) => setRegistration(e.target.value)} 
+							required 
+						/>
+
+						<input 
+							type="password" 
+							placeholder="Confirm password*" 
+							name="password_confirmation" 
+							value={registration.confirmPassword} 
+							onChange={(e) => setRegistration(e.target.value)} 
+							required 
+						/>
 					</div>
 					<div className="register_button-container">
 						<button type="submit">Create account</button>
