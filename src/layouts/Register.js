@@ -2,7 +2,9 @@ import React from 'react';
 import './Register.css';
 import { Link } from 'react-router-dom';
 
-const Register = ({ email }) => {
+const Register = () => {
+
+
 	return (
 		<div className="register_container">
 			<div className="register_back-btn">
@@ -31,7 +33,7 @@ const Register = ({ email }) => {
 					<h1>Register</h1>
 					<div className="register_inputs-container">
 						<input type="text" placeholder="Full name*" />
-						<input type="email" placeholder="Email*" value={email.value}/>
+						<input type="email" placeholder="Email*" />
 						<input type="password" placeholder="Password*" />
 						<input type="password" placeholder="Confirm password*" />
 					</div>
