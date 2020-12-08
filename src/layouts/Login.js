@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
+	const [ userEmail, setUserEmail ] = useState('');
+	const [ userPassword, setUserPassword ] = useState('');
+
+	const handleLogin = (e) => {
+		e.preventDefault();
+		console.log(userEmail);
+		console.log(userPassword);
+	}
+
 
 	return (
 		<div className="login_container">
@@ -26,11 +35,11 @@ const Login = () => {
 			</div>
 
 			<div className="login_form-container">
-				<form action="/login" className="login_form" method="POST">
+				<form onSubmit={handleLogin} className="login_form">
 					<h1>Welcome</h1>
 					<div className="login_inputs-container">
-						<input type="email" placeholder="Email*" />
-						<input type="password" placeholder="Password*" />
+						<input type="email" placeholder="Email*" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} />
+						<input type="password" placeholder="Password*" value={userPassword} onChange={(e) => setUserPassword(e.target.value)} />
 						<p>
 							<Link to="">Forgot password?</Link>
 						</p>
