@@ -6,6 +6,7 @@ const Guest = require('./models/Guest');
 const User = require('./models/User');
 const db = mongoose.connection;
 require('dotenv').config();
+const jwt = require('jsonwebtoken');
 
 // set view engine
 app.set('view engine', 'ejs');
