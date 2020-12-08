@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 const Guest = require('./models/Guest');
+const User = require('./models/User');
 const db = mongoose.connection;
 require('dotenv').config();
 
