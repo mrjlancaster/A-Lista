@@ -12,6 +12,7 @@ const Register = () => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		console.log(registration);
 	}
 
 
@@ -45,36 +46,37 @@ const Register = () => {
 						<input 
 							type="text" 
 							placeholder="Full name*" 
-							name="full_name" 
-							value={registration.name} 
-							onChange={(e) => setRegistration(e.target.value)} 
-							required 
+							name="full_name"
+							value={registration.name}
+							onChange={e => setRegistration({ ...registration, name: e.target.value })}
+							// required 
 						/>
 
 						<input 
 							type="email" 
 							placeholder="Email*" 
-							name="email" value={registration.email} 
-							onChange={(e) => setRegistration(e.target.value)} 
-							required 
+							name="email"
+							value={registration.email}
+							onChange={e => setRegistration({ ...registration, email: e.target.value })}
+							// required 
 						/>
 
 						<input 
 							type="password" 
 							placeholder="Password*" 
-							name="password" 
-							value={registration.password} 
-							onChange={(e) => setRegistration(e.target.value)} 
-							required 
+							name="password"
+							value={registration.password}
+							onChange={e => setRegistration({ ...registration, password: e.target.value })}
+							// required 
 						/>
 
 						<input 
 							type="password" 
 							placeholder="Confirm password*" 
 							name="password_confirmation" 
-							value={registration.confirmPassword} 
-							onChange={(e) => setRegistration(e.target.value)} 
-							required 
+							value={registration.confirmPassword}
+							onChange={e => setRegistration({ ...registration, confirmPassword: e.target.value })}
+							// required 
 						/>
 					</div>
 					<div className="register_button-container">
