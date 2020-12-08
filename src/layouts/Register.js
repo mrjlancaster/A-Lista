@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Register.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Register = () => {
 	const [ registration, setRegistration ] = useState({
@@ -13,6 +14,14 @@ const Register = () => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		console.log(registration);
+
+		axios.post('/register', registration)
+		.then(res => {
+			console.log(res);
+		})
+		.catch(err => {
+			console.log(err);
+		})
 	}
 
 
