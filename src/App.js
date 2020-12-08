@@ -5,7 +5,7 @@ import Homepage from './layouts/Homepage';
 import Login from './layouts/Login';
 import Register from './layouts/Register';
 
-const App =() => {
+const App =() => {	
 	return (
 		<Router>
 			<div className="App">

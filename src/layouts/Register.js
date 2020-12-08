@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Register.css';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
-
+	const [email, setEmail ] = useState('');
 
 	return (
 		<div className="register_container">
@@ -33,7 +33,7 @@ const Register = () => {
 					<h1>Register</h1>
 					<div className="register_inputs-container">
 						<input type="text" placeholder="Full name*" />
-						<input type="email" placeholder="Email*" />
+						<input type="email" placeholder="Email*" value={email} onChange={(e) => setEmail(e.target.value)} />
 						<input type="password" placeholder="Password*" />
 						<input type="password" placeholder="Confirm password*" />
 					</div>
@@ -43,7 +43,6 @@ const Register = () => {
 							<Link to="/login"> Login</Link>
 						</p>
 					</div>
-					
 				</form>
 			</div>
 		</div>

@@ -4,10 +4,7 @@ import { useState } from 'react';
 
 const Body = () => {
 	const [ email, setEmail ] = useState('');
-
-
 	
-
 	return (
 		<div className="body_container">
 			<div className="body_description-wrapper">
@@ -19,7 +16,7 @@ const Body = () => {
 					<input type="text" className="register_input" name="email" placeholder="emailadress@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
 				</div>
 					<Link to='/register' className="register_link">
-						Create account <i class="fas fa-long-arrow-alt-right"></i>
+						Create account <i className="fas fa-long-arrow-alt-right"></i>
 					</Link>
 			</div>
 		</div>
