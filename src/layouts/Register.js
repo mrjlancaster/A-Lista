@@ -15,25 +15,16 @@ const Register = () => {
 		e.preventDefault();
 		console.log(registration);
 
+		// Handle post request
 		axios({
 			url: '/api/newUser',
 			method: 'POST',
 			data: registration
 		})
-			.then(res => console.log('data has been sent to server.', res))
+			.then(res => {
+				console.log('data has been sent to server.', res);
+			})
 			.catch(err => console.log(err))
-
-
-		// const options = {
-		// 	method: 'POST',
-		// 	headers: {
-		// 		'Content-Type': 'application/json'
-		// 	},
-		// 	body: JSON.stringify(registration)
-		// }
-		// fetch('/api/register', options)
-		// 	.then(res => console.log(res))
-		// 	.catch(err => console.log(err));
 	}
 
 

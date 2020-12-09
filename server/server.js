@@ -9,7 +9,6 @@ const jwt = require('jsonwebtoken');
 
 // routes
 const routes = require('./routes/authRoutes');
-app.use('/api', routes);
 
 // set view engine
 app.set('view engine', 'ejs');
@@ -56,6 +55,8 @@ app.get('/', (req, res) => {
 app.get('/my-list', (req, res) => {
     res.render('guestList', {party: 'my party'});
 })
+
+app.use('/api', routes);
 
 
 // connect database

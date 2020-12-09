@@ -11,7 +11,8 @@ router.post('/newUser', (req, res) => { // REGISTER POST REQUEST
 	const newUser = new User({
 		name: req.body.name,
 		email: req.body.email,
-		password: req.body.password
+		password: req.body.password,
+		dateCreated: Date.now()
 	});
 
 	newUser.save()
