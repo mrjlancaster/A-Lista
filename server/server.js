@@ -3,10 +3,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
 const Guest = require('./models/Guest');
-const User = require('./models/User');
 const db = mongoose.connection;
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
+
+// routes
+const routes = require('./routes/authRoutes');
+app.use('/api', routes);
 
 // set view engine
 app.set('view engine', 'ejs');
@@ -17,6 +20,11 @@ app.use(bodyParser.json())
 
 // render public folder
 app.use(express.static('public'));
+
+
+app.get('/test', (req, res) => {
+	res.send('testing')
+})
 
 //routes
 app.post('/guest-list', (req, res) => {
@@ -71,3 +79,12 @@ mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTo
 //     {name: "Mel Gibson"},
 //     {name: "Jennie Morrison"}
 // ])
+
+
+// const newUser = new User({
+// 	name: 'Jon Smith',
+// 	email: 'smith@test.com',
+// 	password: '0000'
+// })
+
+// newUser.save();

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Register.css';
 import { Link } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 
 const Register = () => {
 	const [ registration, setRegistration ] = useState({
@@ -11,25 +11,29 @@ const Register = () => {
 		confirmPassword: '',
 	});
 
-	const handleSubmit = (event) => {
-		event.preventDefault();
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log(registration);
 
-		// axios.post('/register', registration)
-		// .then(res => {
-		// 	console.log(res);
-		// })
-		// .catch(err => {
-		// 	console.log(err);
-		// })
-
-		const options = {
+		axios({
+			url: '/api/newUser',
 			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(registration)
-		}
-		fetch('/register', options)
+			data: registration
+		})
+			.then(res => console.log('data has been sent to server.', res))
+			.catch(err => console.log(err))
+
+
+		// const options = {
+		// 	method: 'POST',
+		// 	headers: {
+		// 		'Content-Type': 'application/json'
+		// 	},
+		// 	body: JSON.stringify(registration)
+		// }
+		// fetch('/api/register', options)
+		// 	.then(res => console.log(res))
+		// 	.catch(err => console.log(err));
 	}
 
 
