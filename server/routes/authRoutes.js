@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const bcrypt = require('bcryptjs');
 
 // login handlers
 router.post('/login', () => {});
@@ -8,10 +9,12 @@ router.get('/login', () => {});
 
 // register handlers
 router.post('/newUser', (req, res) => { // REGISTER POST REQUEST
+	const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+
 	const newUser = new User({
 		name: req.body.name,
 		email: req.body.email,
-		password: req.body.password,
+		password: hashedPassword,
 		dateCreated: Date.now()
 	});
 

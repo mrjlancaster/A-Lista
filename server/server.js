@@ -16,9 +16,8 @@ app.set('view engine', 'ejs');
 // middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
+app.use(express.static('public')); // render public folder
 
-// render public folder
-app.use(express.static('public'));
 
 
 app.get('/test', (req, res) => {
@@ -59,8 +58,9 @@ app.get('/my-list', (req, res) => {
 app.use('/api', routes);
 
 
-// connect database
-mongoose.connect(process.env.DB_CONNECTION, {useNewUrlParser: true, useUnifiedTopology: true }, () => {
+// connect server and database
+mongoose.set('useCreateIndex', true); // remove "ensureIndex()"" deprecated warning
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log('Connected to DB successfully!');
 
     // run localhost
