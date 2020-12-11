@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
 	const [ userLogin, setUserLogin ] = useState({
@@ -10,6 +11,17 @@ const Login = () => {
 
 	const handleLogin = (e) => {
 		e.preventDefault();
+
+		// Handle post request
+		axios({
+			url: '/api/login',
+			method: 'POST',
+			data: userLogin
+		})
+			.then(res => console.log('login posted', res))
+			.catch(err => console.log(err));
+
+
 		console.log(userLogin);
 	}
 

@@ -5,21 +5,18 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
-// login handlers
-router.post('/login', () => {});
-router.get('/login', () => {});
-
-// register handlers
-router.post('/newUser', (req, res) => { // REGISTER POST REQUEST
+// REGISTER USER
+router.post('/newUser', (req, res) => {
 	const { name, email, password } = req.body;
 	const hashedPassword = bcrypt.hashSync(password, 10);
 
 	// Check if user already exists in db
 	User.findOne({ email })
 		.then(user => {
+			// if user already exists, throw error
 			if (user) console.log('user already exists');
 
-			// Create new user
+			// if user doesn't exist, create new user
 			const newUser = new User({
 				name: name,
 				email: email,
@@ -27,6 +24,7 @@ router.post('/newUser', (req, res) => { // REGISTER POST REQUEST
 				date_created: Date.now()
 			});
 
+			// insert new user to db
 			newUser.save()
 			.then(user => {
 				jwt.sign({ id: user.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 3600 }), (err, token) => {
@@ -46,5 +44,26 @@ router.post('/newUser', (req, res) => { // REGISTER POST REQUEST
 router.get('/register', () => { // REGISTER GET REQUEST
 
 });
+
+// LOGIN USER
+router.post('/login', (req, res) => {
+	const { userEmail, userPassword } = req.body;
+
+	const hashUserPassword = bcrypt.hashSync(userPassword, 10);
+
+	User.findOne({ email: userEmail })
+		.then(user => {
+			if (!user) console.log('user not found');
+		})
+
+});
+
+
+
+
+
+router.get('/login', () => {});
+
+// Logout user
 
 module.exports = router;
