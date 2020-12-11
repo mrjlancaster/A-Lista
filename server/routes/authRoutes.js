@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 // login handlers
 router.post('/login', () => {});
@@ -15,7 +17,7 @@ router.post('/newUser', (req, res) => { // REGISTER POST REQUEST
 	// Check if user already exists in db
 	User.findOne({ email })
 		.then(user => {
-			if (user) return res.status(400).json({ msg: 'user already exists' });
+			if (user) console.log('user already exists');
 
 			// Create new user
 			const newUser = new User({
@@ -26,8 +28,18 @@ router.post('/newUser', (req, res) => { // REGISTER POST REQUEST
 			});
 
 			newUser.save()
-			.then(res => console.log(res))
-			.catch(err => console.log(err))
+			.then(user => {
+				jwt.sign({ id: user.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 3600 }), (err, token) => {
+					if (err) throw err;
+					res.json({
+						token: token,
+						user: {
+							name: user.name,
+							email: user.email
+						}
+					})
+				}
+			})
 		})
 });
 
