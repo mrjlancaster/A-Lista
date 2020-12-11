@@ -9,29 +9,26 @@ router.get('/login', () => {});
 
 // register handlers
 router.post('/newUser', (req, res) => { // REGISTER POST REQUEST
-	const { name, email } = req.body;
-	const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+	const { name, email, password } = req.body;
+	const hashedPassword = bcrypt.hashSync(password, 10);
 
 	// Check if user already exists in db
-	User.findOne({ email }, function(err, user) {
-		if (err) {
-			console.log(err);
-		} else if (user) {
-			console.log('user already exists');
-		} else {
+	User.findOne({ email })
+		.then(user => {
+			if (user) return res.status(400).json({ msg: 'user already exists' });
+
 			// Create new user
 			const newUser = new User({
 				name: name,
 				email: email,
 				password: hashedPassword,
-				dateCreated: Date.now()
+				date_created: Date.now()
 			});
 
 			newUser.save()
 			.then(res => console.log(res))
 			.catch(err => console.log(err))
-		}
-	})
+		})
 });
 
 router.get('/register', () => { // REGISTER GET REQUEST
