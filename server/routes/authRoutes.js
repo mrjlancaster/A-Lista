@@ -4,10 +4,16 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
+const cookieParser = require('cookie-parser');
 
 // handle errors function
 const handleErrors = (err) => {
 	console.log(err.message);
+}
+
+// Create token
+const createToken = (id) => {
+	return jwt.sign({ id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 3600 })
 }
 
 // REGISTER USER
@@ -28,21 +34,15 @@ router.post('/newUser', (req, res) => {
 				password: hashedPassword,
 				date_created: Date.now()
 			});
-
+		
 			// insert new user to db
 			newUser.save()
 			.then(user => {
-				jwt.sign({ id: user.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 3600 }), (err, token) => {
-					if (err) handleErrors(err); // throw err;
-					res.json({
-						token: token,
-						user: {
-							name: user.name,
-							email: user.email
-						}
-					})
-				}
+				const token = createToken(user._id);
+				res.cookie('jwt', token, { httpOnly: true, expiresIn: 3600 });
+				res.status(201).json({ user: user._id });
 			})
+			.catch(error => handleErrors(error))
 		})
 });
 

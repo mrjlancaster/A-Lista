@@ -21,7 +21,7 @@ const Register = () => {
 			method: 'POST',
 			data: registration
 		})
-			.then(res => console.log('data has been sent to server.', res))
+			.then(res => console.log(res))
 			.catch(err => console.log(err))
 	}
 

@@ -6,6 +6,7 @@ const Guest = require('./models/Guest');
 const db = mongoose.connection;
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 
 // routes
 const routes = require('./routes/authRoutes');
@@ -17,6 +18,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 app.use(express.static('public')); // render public folder
+app.use(cookieParser());
 
 
 
@@ -59,8 +61,7 @@ app.use('/api', routes);
 
 
 // connect server and database
-mongoose.set('useCreateIndex', true); // remove "ensureIndex()"" deprecated warning
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, () => {
     console.log('Connected to DB successfully!');
 
     // run localhost
