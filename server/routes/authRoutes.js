@@ -71,8 +71,6 @@ router.post('/login', (req, res) => {
 				res.status(400).json({ msg: 'user does not exist' });
 			}
 			
-
-					
 		})
 		.catch(error => error)
 });
