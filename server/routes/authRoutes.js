@@ -5,6 +5,11 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
+// handle errors function
+const handleErrors = (err) => {
+	console.log(err.message);
+}
+
 // REGISTER USER
 router.post('/newUser', (req, res) => {
 	const { name, email, password } = req.body;
@@ -28,7 +33,7 @@ router.post('/newUser', (req, res) => {
 			newUser.save()
 			.then(user => {
 				jwt.sign({ id: user.id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 3600 }), (err, token) => {
-					if (err) throw err;
+					if (err) handleErrors(err); // throw err;
 					res.json({
 						token: token,
 						user: {
