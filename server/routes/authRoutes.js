@@ -53,14 +53,28 @@ router.get('/register', () => { // REGISTER GET REQUEST
 // LOGIN USER
 router.post('/login', (req, res) => {
 	const { userEmail, userPassword } = req.body;
-
 	const hashUserPassword = bcrypt.hashSync(userPassword, 10);
 
 	User.findOne({ email: userEmail })
 		.then(user => {
-			if (!user) console.log('user not found');
-		})
+			if (user) {
+				// validate password
+				bcrypt.compare(userPassword, user.password)
+				.then(isMatch => {
+					if (isMatch) {
+						return res.status(200).json({ msg: 'login complete!' });
+					} else {
+						return res.status(400).json({ msg: 'invalid password' })
+					}
+				})		
+			} else {
+				res.status(400).json({ msg: 'user does not exist' });
+			}
+			
 
+					
+		})
+		.catch(error => error)
 });
 
 
