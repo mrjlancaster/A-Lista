@@ -8,21 +8,62 @@ const Register = () => {
 		name: '',
 		email: '',
 		password: '',
-		confirmPassword: '',
+		confirmPassword: ''
 	});
+
+	const [ errorMessage, setErrorMessage ] = useState('');
+
+	// Form validation
+	const validateForm = () => {
+
+		if (registration.name === '' || registration.name.length < 5) {
+			setErrorMessage('please fill the name field');
+			setTimeout(() => {
+				setErrorMessage('');
+			}, 5000);
+		} else if (registration.email === '' ) {
+			setErrorMessage('please fill the email field')
+			setTimeout(() => {
+				setErrorMessage('');
+			}, 5000);
+		} else if (registration.password === '' || registration.password.length < 6) {
+			setErrorMessage('please choose a password')
+			setTimeout(() => {
+				setErrorMessage('');
+			}, 5000);
+		}
+	}
+
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(registration);
 
-		// Handle post request
-		axios({
-			url: '/api/newUser',
-			method: 'POST',
-			data: registration
-		})
-			.then(res => console.log(res))
-			.catch(err => console.log(err))
+		validateForm();
+
+
+		// const isValid = validateForm();
+
+		// if (isValid) {
+		// 	// Handle post request
+		// 	axios({
+		// 		url: '/api/newUser',
+		// 		method: 'POST',
+		// 		data: registration
+		// 	})
+		// 	.then(res => console.log(res))
+		// 	.catch(err => console.log(err));
+
+		// 	// reset input fields
+		// 	setRegistration({
+		// 		name: '',
+		// 		email: '',
+		// 		password: '',
+		// 		confirmPassword: '',
+		// 	});
+		// }
+
+		// console.log(registration);
+
 	}
 
 
@@ -53,7 +94,7 @@ const Register = () => {
 				<form onSubmit={handleSubmit} className="register_form">
 					<h1>Register</h1>
 					<div className="register_inputs-container">
-						<input 
+						<input  
 							type="text" 
 							placeholder="Full name*" 
 							name="full_name"
@@ -70,6 +111,7 @@ const Register = () => {
 							onChange={e => setRegistration({ ...registration, email: e.target.value })}
 							// required 
 						/>
+
 
 						<input 
 							type="password" 
@@ -88,7 +130,9 @@ const Register = () => {
 							onChange={e => setRegistration({ ...registration, confirmPassword: e.target.value })}
 							// required 
 						/>
+						<div className='errorMessage'>{errorMessage}</div>
 					</div>
+
 					<div className="register_button-container">
 						<button type="submit">Create account</button>
 						<p>Already have an account?

@@ -133,3 +133,20 @@
 	text-align: center;
 	margin-top: 5px;
 }
+
+
+/* validate styles */
+.notValid {
+	width: 300px;
+	padding: 8px 10px;
+	margin: 10px 0;
+	margin-left: 20px;
+	border: 1px solid red;
+	border-radius: 4px;
+}
+
+.errorMessage {
+	text-align: center;
+	color: red;
+	font-size: 13px;
+}
