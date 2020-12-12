@@ -69,3 +69,13 @@
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 }
+
+/* copyright */
+.copyrights {
+	font-size: 12px;
+	position: absolute;
+	top: 98%;
+	left: 50%;
+	color: rgba(180, 180, 180, 0.667);
+	transform: translate(-50%, -50%);
+}

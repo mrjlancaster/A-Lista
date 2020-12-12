@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 const Body = () => {
 	const [ email, setEmail ] = useState('');
+
 	
 	return (
 		<div className="body_container">
@@ -19,6 +20,8 @@ const Body = () => {
 						Create account <i className="fas fa-long-arrow-alt-right"></i>
 					</Link>
 			</div>
+
+			<p className="copyrights">Copyright &copy; 2020 All Rights Reserved</p>
 		</div>
 	)
 }
