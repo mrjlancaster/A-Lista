@@ -72,9 +72,10 @@
 
 /* copyright */
 .copyrights {
-	font-size: 12px;
+	font-size: 11px;
 	position: absolute;
 	top: 98%;
+	letter-spacing: .4em;
 	left: 50%;
 	color: rgba(180, 180, 180, 0.667);
 	transform: translate(-50%, -50%);
