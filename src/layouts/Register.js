@@ -27,10 +27,17 @@ const Register = () => {
 				setErrorMessage('');
 			}, 5000);
 		} else if (registration.password === '' || registration.password.length < 6) {
-			setErrorMessage('please choose a password')
+			setErrorMessage('Create password with minimum of 6 characters')
 			setTimeout(() => {
 				setErrorMessage('');
 			}, 5000);
+		} else if (registration.confirmPassword === '' || registration.confirmPassword !== registration.password) {
+			setErrorMessage('Please confirm password')
+			setTimeout(() => {
+				setErrorMessage('');
+			}, 5000);
+		} else {
+			return true;
 		}
 	}
 
@@ -38,29 +45,28 @@ const Register = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		validateForm();
+		const isValid = validateForm();
 
+		if (isValid) {
+			// // Handle post request
+			// axios({
+			// 	url: '/api/newUser',
+			// 	method: 'POST',
+			// 	data: registration
+			// })
+			// .then(res => console.log(res))
+			// .catch(err => console.log(err));
 
-		// const isValid = validateForm();
+			// reset input fields
+			setRegistration({
+				name: '',
+				email: '',
+				password: '',
+				confirmPassword: '',
+			});
 
-		// if (isValid) {
-		// 	// Handle post request
-		// 	axios({
-		// 		url: '/api/newUser',
-		// 		method: 'POST',
-		// 		data: registration
-		// 	})
-		// 	.then(res => console.log(res))
-		// 	.catch(err => console.log(err));
-
-		// 	// reset input fields
-		// 	setRegistration({
-		// 		name: '',
-		// 		email: '',
-		// 		password: '',
-		// 		confirmPassword: '',
-		// 	});
-		// }
+			console.log('form validated');
+		}
 
 		// console.log(registration);
 
@@ -111,7 +117,6 @@ const Register = () => {
 							onChange={e => setRegistration({ ...registration, email: e.target.value })}
 							// required 
 						/>
-
 
 						<input 
 							type="password" 
