@@ -31,14 +31,15 @@ const Register = () => {
 
 		if (!registration.email && !registration.email.includes('@')) {
 			emailError = 'Please enter valid email'
+
 		}
 
 		if (!registration.password || registration.password.length < 6) {
-			passwordError = 'Create password with minimum of 6 characters'
+			passwordError = 'Password must be minimum of 6 characters'
 		}
 
 		if (registration.confirmPassword !== registration.password) {
-			passwordTwoError = 'Please confirm email'
+			passwordTwoError = 'Password does not match'
 		}
 
 		if (nameError || emailError || passwordError || passwordTwoError) {
@@ -111,8 +112,10 @@ const Register = () => {
 				<form onSubmit={handleSubmit} className="register_form">
 					<h1>Register</h1>
 					<div className="register_inputs-container">
+
 						<input
-							className="register_name-input"
+							className={ errorMessage ? "register_name-input" : 'notValid' }
+							// className="register_name-input"
 							type="text" 
 							placeholder="Full name*" 
 							name="full_name"
