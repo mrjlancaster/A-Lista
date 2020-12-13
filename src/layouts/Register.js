@@ -8,37 +8,44 @@ const Register = () => {
 		name: '',
 		email: '',
 		password: '',
-		confirmPassword: ''
+		confirmPassword: '',
 	});
 
-	const [ errorMessage, setErrorMessage ] = useState('');
+	const [ errorMessage, setErrorMessage ] = useState({
+		nameError: '',
+		emailError: '',
+		passwordError: '',
+		passwordTwoError: ''
+	});
 
 	// Form validation
 	const validateForm = () => {
+		let nameError = '';
+		let emailError = '';
+		let passwordError = '';
+		let passwordTwoError = '';
 
-		if (registration.name === '' || registration.name.length < 5) {
-			setErrorMessage('please fill the name field');
-			setTimeout(() => {
-				setErrorMessage('');
-			}, 5000);
-		} else if (registration.email === '' ) {
-			setErrorMessage('please fill the email field')
-			setTimeout(() => {
-				setErrorMessage('');
-			}, 5000);
-		} else if (registration.password === '' || registration.password.length < 6) {
-			setErrorMessage('Create password with minimum of 6 characters')
-			setTimeout(() => {
-				setErrorMessage('');
-			}, 5000);
-		} else if (registration.confirmPassword === '' || registration.confirmPassword !== registration.password) {
-			setErrorMessage('Please confirm password')
-			setTimeout(() => {
-				setErrorMessage('');
-			}, 5000);
-		} else {
-			return true;
+		if (!registration.name || registration.name.length < 5) {
+			nameError = 'Please enter your name'
 		}
+
+		if (!registration.email && !registration.email.includes('@')) {
+			emailError = 'Please enter valid email'
+		}
+
+		if (!registration.password || registration.password.length < 6) {
+			passwordError = 'Create password with minimum of 6 characters'
+		}
+
+		if (registration.confirmPassword !== registration.password) {
+			passwordTwoError = 'Please confirm email'
+		}
+
+		if (nameError || emailError || passwordError || passwordTwoError) {
+			setErrorMessage({ nameError, emailError, passwordError, passwordTwoError })
+			return false;
+		}
+		return true
 	}
 
 
@@ -64,12 +71,16 @@ const Register = () => {
 				password: '',
 				confirmPassword: '',
 			});
+			setErrorMessage({ 
+				nameError: '', 
+				emailError: '', 
+				passwordError: '',
+				passwordTwoError: ''
+			 })
+
 
 			console.log('form validated');
 		}
-
-		// console.log(registration);
-
 	}
 
 
@@ -100,7 +111,8 @@ const Register = () => {
 				<form onSubmit={handleSubmit} className="register_form">
 					<h1>Register</h1>
 					<div className="register_inputs-container">
-						<input  
+						<input
+							className="register_name-input"
 							type="text" 
 							placeholder="Full name*" 
 							name="full_name"
@@ -108,8 +120,10 @@ const Register = () => {
 							onChange={e => setRegistration({ ...registration, name: e.target.value })}
 							// required 
 						/>
+						<div className='errorMessage'>{errorMessage.nameError}</div>
 
 						<input 
+							className="register_email-input"
 							type="email" 
 							placeholder="Email*" 
 							name="email"
@@ -117,8 +131,10 @@ const Register = () => {
 							onChange={e => setRegistration({ ...registration, email: e.target.value })}
 							// required 
 						/>
+						<div className='errorMessage'>{errorMessage.emailError}</div>
 
 						<input 
+							className="register_password-input"
 							type="password" 
 							placeholder="Password*" 
 							name="password"
@@ -126,8 +142,10 @@ const Register = () => {
 							onChange={e => setRegistration({ ...registration, password: e.target.value })}
 							// required 
 						/>
+						<div className='errorMessage'>{errorMessage.passwordError}</div>
 
 						<input 
+							className="register_passwordTwo-input"
 							type="password" 
 							placeholder="Confirm password*" 
 							name="password_confirmation" 
@@ -135,7 +153,7 @@ const Register = () => {
 							onChange={e => setRegistration({ ...registration, confirmPassword: e.target.value })}
 							// required 
 						/>
-						<div className='errorMessage'>{errorMessage}</div>
+						<div className='errorMessage'>{errorMessage.passwordTwoError}</div>
 					</div>
 
 					<div className="register_button-container">

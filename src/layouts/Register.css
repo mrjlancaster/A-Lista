@@ -104,7 +104,10 @@
 	flex-direction: column;
 }
 
-.register_form input {
+.register_name-input,
+.register_email-input,
+.register_password-input,
+.register_passwordTwo-input {
 	width: 300px;
 	padding: 8px 10px;
 	margin: 10px 0;
@@ -147,6 +150,6 @@
 
 .errorMessage {
 	text-align: center;
-	color: red;
+	color: rgb(209, 0, 0);
 	font-size: 13px;
 }
