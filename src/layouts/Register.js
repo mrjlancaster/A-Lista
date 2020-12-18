@@ -57,13 +57,13 @@ const Register = () => {
 
 		if (isValid) {
 			// // Handle post request
-			// axios({
-			// 	url: '/api/newUser',
-			// 	method: 'POST',
-			// 	data: registration
-			// })
-			// .then(res => console.log(res))
-			// .catch(err => console.log(err));
+			axios({
+				url: '/api/newUser',
+				method: 'POST',
+				data: registration
+			})
+			.then(res => console.log(res))
+			.catch(err => console.log(err));
 
 			// reset input fields
 			setRegistration({
@@ -80,7 +80,7 @@ const Register = () => {
 			 })
 
 
-			console.log('form validated');
+			console.log('form validated and sent');
 		}
 	}
 
