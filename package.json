@@ -2,7 +2,7 @@
   "name": "a-lista",
   "version": "0.1.0",
   "description": "Guests manager application",
-  "homepage": "http://mrjlancaster.github.io/A-Lista",
+  "homepage": "https://mrjlancaster.github.io/A-Lista",
   "proxy": "http://localhost:5000",
   "private": true,
   "dependencies": {
