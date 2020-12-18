@@ -8,7 +8,7 @@ require('dotenv').config();
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 
-// routes
+// route
 const routes = require('./routes/authRoutes');
 
 // set view engine
@@ -17,16 +17,10 @@ app.set('view engine', 'ejs');
 // middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
-// app.use(express.static('public')); // render public folder
+app.use(express.static('public')); // render public folder
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, 'build', 'index.html'));
-})
-
-
-//routes
+//route
 app.post('/guest-list', (req, res) => {
     const guest = new Guest({
         name: req.body.name,
