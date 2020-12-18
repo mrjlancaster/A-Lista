@@ -26,12 +26,6 @@ app.get('/', (req, res) => {
 })
 
 
-
-
-app.get('/test', (req, res) => {
-	res.send('testing')
-})
-
 //routes
 app.post('/guest-list', (req, res) => {
     const guest = new Guest({
@@ -52,11 +46,6 @@ app.post('/event', (req, res) => {
     res.redirect('my-list')
 })
 
-
-// render home view
-app.get('/', (req, res) => {
-    res.render('home');
-})
 
 // render guest list view
 app.get('/my-list', (req, res) => {
