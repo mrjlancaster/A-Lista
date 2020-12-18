@@ -41,6 +41,11 @@ app.post('/event', (req, res) => {
 })
 
 
+// render home view
+app.get('/', (req, res) => {
+    res.render('home');
+})
+
 // render guest list view
 app.get('/my-list', (req, res) => {
     res.render('guestList', {party: 'my party'});

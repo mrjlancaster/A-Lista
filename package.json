@@ -2,7 +2,6 @@
   "name": "a-lista",
   "version": "0.1.0",
   "description": "Guests manager application",
-  "homepage": "https://mrjlancaster.github.io/A-Lista",
   "proxy": "http://localhost:5000",
   "private": true,
   "dependencies": {
@@ -39,9 +38,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "concurrently \"npm run server\" \"npm run start\"",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "dev": "concurrently \"npm run server\" \"npm run start\""
   },
   "eslintConfig": {
     "extends": [
