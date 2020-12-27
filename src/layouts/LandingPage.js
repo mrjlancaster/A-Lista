@@ -1,4 +1,3 @@
-import Background from '../img/landing-page-bg2.jpg';
 import './LandingPage.css';
 
 const LandingPage = () => {
@@ -10,14 +9,16 @@ const LandingPage = () => {
 				<p className="hashtag">#Underconstruction</p>
 				<div>
 					<p>Get notify when it's ready</p>
-					<div>
-						<input type="text" className="register_input" name="email" placeholder="emailadress@example.com"  />
+					<div className="notify__me--wrapper">
+						<input type="text" className="notify__me--input" name="email" placeholder="emailadress@example.com"  />
+						<button type="button" className="get__notified--btn">
+							Create account <i className="fas fa-long-arrow-alt-right"></i>
+						</button>
 
-						<p className="copyrights">Copyright &copy; 2020 All Rights Reserved</p>
 					</div>
 				</div>
 			</div>
-			
+			<p className="copyrights">Copyright &copy; 2020 All Rights Reserved</p>
 		</div>
 	)
 }
