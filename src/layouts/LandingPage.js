@@ -10,6 +10,10 @@ const LandingPage = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
+		if (email.email === '') {
+			return false;
+		}
+
 		axios({
 			url: '/api/notify-me',
 			method: 'POST',
@@ -39,6 +43,7 @@ const LandingPage = () => {
 						placeholder="youremail@example.com" 
 						value={email.email} 
 						onChange={(e) => setEmail({email: e.target.value})} 
+						required
 					/>
 					<button type="submit" className="get__notified--btn">
 						Get Notified <i className="fas fa-long-arrow-alt-right"></i>

@@ -145,3 +145,14 @@
 		text-align: center;
 	}
 }
+
+.email__error {
+	color: #fff;
+}
+
+/* classlist */
+.validate {
+	border: 1px solid red;
+	padding: 6px 10px;
+	font-size: 12px;
+}
