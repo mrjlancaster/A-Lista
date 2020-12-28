@@ -1,6 +1,13 @@
+import React, { useState } from 'react';
 import './LandingPage.css';
 
 const LandingPage = () => {
+	const [ email, setEmail ] = useState('');
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+	}
+
 	return (
 		<div className="landing__page">
 			<div className="landing__page--content">
@@ -10,12 +17,12 @@ const LandingPage = () => {
 					<p className="coming__soon">Coming soon</p>
 				</div>
 
-				<div className="notify__me--wrapper">
-					<input type="text" className="notify__me--input" name="email" placeholder="youremail@example.com"  />
-					<button type="button" className="get__notified--btn">
+				<form onSubmit={handleSubmit} className="notify__me--wrapper">
+					<input type="text" name="email" className="notify__me--input" name="email" placeholder="youremail@example.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+					<button className="get__notified--btn">
 						Get Notified <i className="fas fa-long-arrow-alt-right"></i>
 					</button>
-				</div>
+				</form>
 			</div>
 			<p className="copyrights">Copyright &copy; 2020 All Rights Reserved</p>
 		</div>

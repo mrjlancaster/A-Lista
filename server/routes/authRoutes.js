@@ -16,6 +16,12 @@ const createToken = (id) => {
 	return jwt.sign({ id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 3600 })
 }
 
+// LANDING PAGE NOTIFY EMAIL HANDLER
+router.post('/notify-me', (req, res) => {
+	console.log(req.body.email);
+})
+
+
 // REGISTER USER
 router.post('/newUser', (req, res) => {
 	const { name, email, password } = req.body;
