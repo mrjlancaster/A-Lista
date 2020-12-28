@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const NotifySchema = new Schema({
+const notifySchema = new Schema({
 	email: {
 		type: String,
 		required: true

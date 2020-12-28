@@ -6,7 +6,7 @@ const Guest = require('./models/Guest');
 const db = mongoose.connection;
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 
 // route
 const routes = require('./routes/authRoutes');
@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 app.use(express.static('build')); // render public folder
-app.use(cookieParser());
+// app.use(cookieParser());
 
 //route
 app.post('/guest-list', (req, res) => {
