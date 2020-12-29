@@ -1,1 +1,0 @@
-Guest planner application
