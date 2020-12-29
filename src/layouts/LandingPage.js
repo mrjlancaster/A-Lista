@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './LandingPage.css';
-import axios from 'axios';
+// import axios from 'axios';
 
 const LandingPage = () => {
 	const [ msg, setMsg ] = useState('Coming soon')
@@ -15,13 +15,28 @@ const LandingPage = () => {
 			return false;
 		}
 
-		axios({
-			url: '/api/notify-me',
+		const option = {
 			method: 'POST',
-			data: email
-		})
-		.then(res => console.log(res))
-		.catch(err => console.log(err));
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(email)
+		}
+
+		fetch('/api/notify-me', option)
+		.then(response => response)
+		.catch(error => error)
+
+		
+
+
+		// axios({
+		// 	url: '/api/notify-me',
+		// 	method: 'post',
+		// 	data: email
+		// })
+		// .then(res => console.log(res))
+		// .catch(err => console.log(err));
 
 		// clear input field
 		setEmail({email: ''});

@@ -15,6 +15,7 @@ const routes = require('./routes/authRoutes');
 // middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
+app.use(express.json());
 app.use(express.static('build')); // render public folder
 // app.use(cookieParser());
 
