@@ -16,7 +16,7 @@ const LandingPage = () => {
 		}
 
 		axios({
-			url: '/api/notify-me/',
+			url: '/api/notify-me',
 			method: 'POST',
 			data: email
 		})

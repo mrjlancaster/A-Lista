@@ -6,6 +6,7 @@ const Guest = require('./models/Guest');
 const db = mongoose.connection;
 require('dotenv').config();
 const jwt = require('jsonwebtoken');
+const cors = require('cors');
 // const cookieParser = require('cookie-parser');
 
 // route
@@ -17,6 +18,7 @@ app.use(bodyParser.json())
 app.use(express.static('build')); // render public folder
 // app.use(cookieParser());
 
+app.use(cors());
 app.use('/api', routes);
 
 
