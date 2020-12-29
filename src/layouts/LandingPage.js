@@ -25,7 +25,7 @@ const LandingPage = () => {
 
 		fetch('/api/notify', option)
 			.then(response => response.json())
-			.catch(error => error)
+			.catch(error => error);
 
 
 		// axios({
