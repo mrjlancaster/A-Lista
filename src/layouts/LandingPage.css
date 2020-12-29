@@ -22,10 +22,9 @@
 	color: #fff;
 }
 
-.coming__soon {
+.coming__soon--text {
 	color: #fff;
 	font-size: 100px;
-	line-height: .8em;
 	letter-spacing: .3em;
 }
 
@@ -144,15 +143,4 @@
 		width: 100%;
 		text-align: center;
 	}
-}
-
-.email__error {
-	color: #fff;
-}
-
-/* classlist */
-.validate {
-	border: 1px solid red;
-	padding: 6px 10px;
-	font-size: 12px;
 }

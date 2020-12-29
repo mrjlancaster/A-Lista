@@ -3,6 +3,7 @@ import './LandingPage.css';
 import axios from 'axios';
 
 const LandingPage = () => {
+	const [ msg, setMsg ] = useState('Coming soon')
 	const [ email, setEmail ] = useState({
 		email: ''
 	});
@@ -24,15 +25,16 @@ const LandingPage = () => {
 
 		// clear input field
 		setEmail({email: ''});
+		setMsg('Thank you!')
 	}
 
 	return (
 		<div className="landing__page">
 			<div className="landing__page--content">
 				<h2 className="coming__soon--title">A-LISTA</h2>
-				<div className="coming__soon--texts">
-					{/* <p className="hashtag">#Underconstruction</p> */}
-					<p className="coming__soon">Coming soon</p>
+				{/* <p className="hashtag">#Underconstruction</p> */}
+				<div class="coming__soon">
+					<p className="coming__soon--text">{msg}</p>
 				</div>
 
 				<form onSubmit={handleSubmit} className="notify__me--wrapper">
