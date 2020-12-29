@@ -11,45 +11,11 @@ const jwt = require('jsonwebtoken');
 // route
 const routes = require('./routes/authRoutes');
 
-// set view engine
-app.set('view engine', 'ejs');
-
 // middlewares
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
 app.use(express.static('build')); // render public folder
 // app.use(cookieParser());
-
-//route
-app.post('/guest-list', (req, res) => {
-    const guest = new Guest({
-        name: req.body.name,
-    })
-
-    guest.save(function(error) {
-        if (error) {
-            console.log(error);
-        }
-    })
-   
-    res.send('new guest added');
-})
-
-app.post('/event', (req, res) => {
-    db.createCollection(req.body.eventName);
-    res.redirect('my-list')
-})
-
-
-// render home view
-app.get('/', (req, res) => {
-    res.render('home');
-})
-
-// render guest list view
-app.get('/my-list', (req, res) => {
-    res.render('guestList', {party: 'my party'});
-})
 
 app.use('/api', routes);
 
