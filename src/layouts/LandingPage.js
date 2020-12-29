@@ -16,20 +16,16 @@ const LandingPage = () => {
 		}
 
 		const option = {
-			method: 'post',
-			hostname: 'mrjlancaster.github.io/A-Lista/',
-			port: 443,
+			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(email)
 		}
 
-		fetch('api/notify', option)
-		.then(response => response.json())
-		.catch(error => error)
-
-		
+		fetch('mrjlancaster.github.io/A-Lista/api/notify', option)
+			.then(response => response.json())
+			.catch(error => error)
 
 
 		// axios({
