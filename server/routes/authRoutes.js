@@ -17,21 +17,21 @@ const createToken = (id) => {
 }
 
 // LANDING PAGE NOTIFICATION EMAIL HANDLER
-router.post('/notify-me', (req, res) => {
-	const { email } = req.body;
-	const currentDate = new Date();
+// router.post('/notify-me', (req, res) => {
+// 	const { email } = req.body;
+// 	const currentDate = new Date();
 
-	const notifyUser = new Notify ({
-		email: email,
-		date_created: currentDate
-	})
+// 	const notifyUser = new Notify ({
+// 		email: email,
+// 		date_created: currentDate
+// 	})
 	
-	notifyUser.save()
-		.then(email => {
-			res.status(201).json({ email: email._id });
-		})
-		.catch(error => handleErrors(error))
-})
+// 	notifyUser.save()
+// 		.then(email => {
+// 			res.status(201).json({ email: email._id });
+// 		})
+// 		.catch(error => handleErrors(error))
+// })
 
 
 // REGISTER USER
