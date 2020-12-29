@@ -37,7 +37,6 @@ const LandingPage = () => {
 		// .catch(err => console.log(err));
 
 		// clear input field
-		setEmail({email: ''});
 		setMsg('Thank you!')
 	}
 
