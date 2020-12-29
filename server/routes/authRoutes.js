@@ -25,6 +25,9 @@ router.post('/notify-me', (req, res) => {
 	})
 	
 	notifyUser.save()
+		.then(email => {
+			res.status(201).json({ email: email._id });
+		})
 		.catch(error => handleErrors(error))
 })
 
