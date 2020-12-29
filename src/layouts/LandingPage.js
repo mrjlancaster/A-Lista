@@ -23,9 +23,9 @@ const LandingPage = () => {
 			body: JSON.stringify(email)
 		}
 
-		fetch('/api/notify', option)
+		fetch('api/notify', option)
 			.then(response => response.json())
-			.catch(error => error);
+			.catch(error => error)
 
 
 		// axios({
@@ -37,6 +37,7 @@ const LandingPage = () => {
 		// .catch(err => console.log(err));
 
 		// clear input field
+		setEmail({email: ''});
 		setMsg('Thank you!')
 	}
 
