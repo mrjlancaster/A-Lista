@@ -17,7 +17,7 @@ const createToken = (id) => {
 }
 
 // LANDING PAGE NOTIFICATION EMAIL HANDLER
-router.post('/notify/', (req, res) => {
+router.post('/notify', (req, res) => {
 	const { email } = req.body;
 	const currentDate = new Date();
 

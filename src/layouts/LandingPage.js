@@ -23,7 +23,7 @@ const LandingPage = () => {
 			body: JSON.stringify(email)
 		}
 
-		fetch('/api/notify/', option)
+		fetch('/api/notify', option)
 			.then(response => response.json())
 			.catch(error => error)
 
