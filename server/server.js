@@ -13,7 +13,7 @@ const cors = require('cors');
 const routes = require('./routes/authRoutes');
 
 // middlewares
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json())
 app.use(express.json());
 app.use(express.static('build')); // render public folder
@@ -21,25 +21,6 @@ app.use(express.static('build')); // render public folder
 
 app.use(cors());
 app.use('/api', routes);
-
-
-// Handle landing page form post request
-app.post('/notify-me', (req, res) => {
-	const { email } = req.body;
-	const currentDate = new Date();
-
-	const notifyUser = new Notify ({
-		email: email,
-		date_created: currentDate
-	})
-	
-	notifyUser.save()
-		.then(email => {
-			res.status(201).json({ email: email._id });
-		})
-		.catch(error => handleErrors(error))
-})
-
 
 // connect server and database
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, () => {

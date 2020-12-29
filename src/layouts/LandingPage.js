@@ -16,15 +16,17 @@ const LandingPage = () => {
 		}
 
 		const option = {
-			method: 'POST',
+			method: 'post',
+			hostname: 'mrjlancaster.github.io/A-Lista/',
+			port: 443,
 			headers: {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify(email)
 		}
 
-		fetch('/notify-me', option)
-		.then(response => response)
+		fetch('api/notify', option)
+		.then(response => response.json())
 		.catch(error => error)
 
 		
