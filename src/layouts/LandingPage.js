@@ -33,7 +33,7 @@ const LandingPage = () => {
 			<div className="landing__page--content">
 				<h2 className="coming__soon--title">A-LISTA</h2>
 				{/* <p className="hashtag">#Underconstruction</p> */}
-				<div class="coming__soon">
+				<div className="coming__soon">
 					<p className="coming__soon--text">{msg}</p>
 				</div>
 
