@@ -144,3 +144,10 @@
 		text-align: center;
 	}
 }
+
+/* BREAKPOINT (MEDIUM) */
+@media (min-width: 689px) and (max-width: 985px) {
+	.coming__soon--text {
+		text-align: center;
+	}
+}
